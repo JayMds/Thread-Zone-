@@ -106,7 +106,6 @@ html {
   }
   
   .title {grid-area: title;}
-  
   .rien1 {grid-area: rien1;}    
   .rien2 {grid-area: rien2;}
 
@@ -156,4 +155,37 @@ html {
     background-color: black;
     grid-area: footer;
 
+  }
+
+  @media only screen and (max-width: 550px ) {
+
+     header{
+
+
+     }
+
+    .container{
+      grid-template-columns: 1fr;
+      grid-template-rows: 0.2fr 1fr 0.05fr;
+      grid-template-areas: 
+      "header"
+      "main"
+      "footer"
+      ;}
+
+      main{
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr 100px 1fr 1fr;
+        grid-template-areas:
+        "text"
+        "title"
+        "thread1"
+        "thread2"
+        "thread3"
+        "thread4" 
+        "thread5"
+        "thread6";
+        overflow-y: scroll;
+        grid-area: main;
+        }
   }
