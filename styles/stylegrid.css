@@ -1,185 +1,266 @@
 html {
-    font-size: 15px; /* px signifie 'pixels': la taille de base pour la police est désormais 10 pixels de haut  */
-    font-family: 'Montserrat', sans-serif; /* cela devrait être le reste du résultat obtenu à partir de Google fonts */
-    color: aliceblue;
-    background-color: #24252A ;
-    box-sizing: border-box;
-  }
-  body{
-    margin: 0; padding: 0;
-    width: 100%;
-    
-  }
-  .container {
-    display:grid;
-    height:100vh;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.63fr 1.7fr 0.5fr 1fr 1fr 0.1fr;
-    grid-template-areas:
-      "header header header header header"
-      "rien1 main main main rien2"
-      "rien1 main main main rien2"
-      "rien1 main main main rien2"
-      "rien1 main main main rien2"
-      "footer footer footer footer footer";
-  }
-  
-  header {
-  padding: 0px 0%;
+  font-size: 15px; /* px signifie 'pixels': la taille de base pour la police est désormais 10 pixels de haut  */
+  font-family: 'Montserrat', sans-serif; /* cela devrait être le reste du résultat obtenu à partir de Google fonts */
+  color: aliceblue;
+  background-color: #24252A ;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0; padding: 0;
   width: 100%;
-  height: 100px;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-  grid-area: header;
-  }
-  
-  button {
-    padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
-    border: none;
-    border-radius: 50px;
-    transition: all 0.3s ease 0s;
-  }
-  button:hover {
-  background-color: rgba(0, 136, 169, 0.5);
-  }
-  .logo{
-  position: relative;
-  width: 300px;
-  }
-  li, a, button {
-  font-weight: 500;
-  color: #edf0f1;
-  text-decoration: none;
-  }
-  .nav_links  {
-  list-style: none;
-  }
-  .nav_links li {
-  display: inline-block;
-  padding: 0px 20px;
-  }
-  .nav_links li a {
-  transition: all 0.3s ease 0s;
-  }
-  .nav_links li a:hover {
-  color: #0088a9;
-  }
+}
 
-  main{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows:1fr 100px 1fr 1fr;
+.container {
+  display:grid;
+  height:100vh;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.63fr 1.7fr 0.5fr 1fr 1fr 0.1fr;
   grid-template-areas:
-  "text text text"
-  "title title title"
-  "thread1 thread2 thread3"
-  "thread4 thread5 thread6";
-  grid-gap: 0.3rem;  
-  overflow-y: scroll;
-  grid-area: main;
-  }
+    "header header header header header"
+    "rien1 main main main rien2"
+    "rien1 main main main rien2"
+    "rien1 main main main rien2"
+    "rien1 main main main rien2"
+    "footer footer footer footer footer";
+}
 
-  main::-webkit-scrollbar {
-    width: 1px;
+.nav__checkbox {
+  display: none;
   }
-  main::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 3px #24252A;
-  }
-  main::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(119, 119, 119));
-  }
-  
-  .text {
-  display: flex;
-  flex-direction: column;
-  border-radius: 22px;
-  background-color: rgba(0, 0, 0, 0.5);
+.nav__toggle {
+display: none;
+}
+
+header {
+padding: 0px 0%;
+width: 100%;
+height: 100px;
+position: fixed;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: black;
+grid-area: header;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+background-color: rgba(0, 136, 169, 0.5);
+}
+.logo{
+position: relative;
+width: 300px;
+}
+li, a, button {
+font-weight: 500;
+color: #edf0f1;
+text-decoration: none;
+}
+.nav_links  {
+list-style: none;
+}
+.nav_links li {
+display: inline-block;
+padding: 0px 20px;
+}
+.nav_links li a {
+transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover {
+color: #0088a9;
+}
+
+main{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows:1fr 100px 1fr 1fr;
+grid-template-areas:
+"text text text"
+"title title title"
+"thread1 thread2 thread3"
+"thread4 thread5 thread6";
+grid-gap: 0.3rem;  
+overflow-y: scroll;
+grid-area: main;
+}
+
+main::-webkit-scrollbar {
+  width: 1px;
+}
+main::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px #24252A;
+}
+main::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(119, 119, 119));
+}
+
+.text {
+display: flex;
+flex-direction: column;
+border-radius: 22px;
+background-color: rgba(0, 0, 0, 0.5);
+text-align: center;
+grid-area: text;
+padding: 10px;
+margin: 10px;
+}
+
+.title {grid-area: title;}
+.rien1 {grid-area: rien1;}    
+.rien2 {grid-area: rien2;}
+
+.menuthread1 {
+  grid-area: thread1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr 100px;
   text-align: center;
-  grid-area: text;
+  
+}
+.menuthread2 {
+  grid-area: thread2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr 100px;
+  text-align: center;
+  
+}
+.menuthread3 {
+  grid-area: thread3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:  80px 1fr 100px;
+  text-align: center;
+  
+}
+.menuthread4 {
+  grid-area: thread4;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr 100px;
   padding: 10px;
-  margin: 10px;
+}
+.menuthread5 {
+  grid-area: thread5;
+  text-align: center;
+  
+}
+.menuthread6 {
+  grid-area: thread6;
+  text-align: center;
+  
+}
+footer {
+  background-color: black;
+  grid-area: footer;
+
+}
+
+@media only screen and (max-width: 870px ) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr 0.05fr;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  }
+
+  header {
+    padding: 10px 0%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo navi menui";
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    grid-area: header;
+    }
+
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 100px 1fr 1fr;
+    grid-template-areas:
+    "text"
+    "title"
+    "thread1"
+    "thread2"
+    "thread3"
+    "thread4" 
+    "thread5"
+    "thread6";
+    overflow-y: scroll;
+    grid-area: main;
   }
   
-  .title {grid-area: title;}
-  .rien1 {grid-area: rien1;}    
-  .rien2 {grid-area: rien2;}
-
-  .menuthread1 {
-    grid-area: thread1;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr 100px;
-    text-align: center;
-    
-  }
-  .menuthread2 {
-    grid-area: thread2;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr 100px;
-    text-align: center;
-    
-  }
-  .menuthread3 {
-    grid-area: thread3;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows:  80px 1fr 100px;
-    text-align: center;
-    
-  }
-  .menuthread4 {
-    grid-area: thread4;
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 80px 1fr 100px;
-    padding: 10px;
-  }
-  .menuthread5 {
-    grid-area: thread5;
-    text-align: center;
-    
-  }
-  .menuthread6 {
-    grid-area: thread6;
-    text-align: center;
-    
-  }
-  footer {
-    background-color: black;
-    grid-area: footer;
-
+  .logo {
+    position: relative;
+    width: 300px;
+    grid-area: logo;
   }
 
-  @media only screen and (max-width: 550px ) {
-    .container{
-      grid-template-columns: 1fr;
-      grid-template-rows: 0.2fr 1fr 0.05fr;
-      grid-template-areas: 
-      "header"
-      "main"
-      "footer";
-      }
-
-      main{
-        grid-template-columns: 1fr;
-        grid-template-rows:1fr 100px 1fr 1fr;
-        grid-template-areas:
-        "text"
-        "title"
-        "thread1"
-        "thread2"
-        "thread3"
-        "thread4" 
-        "thread5"
-        "thread6";
-        overflow-y: scroll;
-        grid-area: main;
-        }
+  svg {
+    width: 2rem;
+    fill: white;
   }
+  .nav__toggle {
+    display: block;
+    position: relative; 
+    cursor: pointer;
+    right: 0;
+    grid-area: menui ;
+  }
+  
+  .menu {
+    display: block;
+    margin: auto;
+  }
+
+  .close {
+    display: none;
+  }
+  
+  .nav_links {
+    display: flex;
+    flex-direction: column;
+    grid-area: navi;
+  }
+  
+  .nav_links li {
+    display: none;
+  }
+  
+  #nav__checkbox:checked ~ ul.nav_links li {
+    display: inline;
+  }
+ 
+  #nav__checkbox:checked ~ svg.close {
+    display: block;
+  }
+  
+    #nav__checkbox:checked ~ svg.menu {
+    display: none;
+  }
+  
+  
+}
